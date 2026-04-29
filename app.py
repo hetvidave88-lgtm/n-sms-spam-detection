@@ -3,21 +3,17 @@ import pickle
 import string
 from nltk.corpus import stopwords
 import nltk
-import nltk
 import os
 
 nltk_data_dir = os.path.join(os.getcwd(), "nltk_data")
-
 os.makedirs(nltk_data_dir, exist_ok=True)
-
 nltk.data.path = [nltk_data_dir]
 
 nltk.download('punkt', download_dir=nltk_data_dir)
 nltk.download('punkt_tab', download_dir=nltk_data_dir)
+nltk.download('stopwords',download_dir=nltk_data_dir)
 
-print("NLTK Data Path:", nltk.data.path)
-
-nltk.download('stopwords')
+from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
 ps = PorterStemmer()
